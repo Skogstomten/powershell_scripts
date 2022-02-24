@@ -4,6 +4,7 @@
 }
 
 $path_to_add = $args[0]
+$path_to_add = Resolve-Path $path_to_add
 
 $old_path = (Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).path
 
