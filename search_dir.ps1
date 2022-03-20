@@ -7,4 +7,4 @@ if ($args.count -lt 1) {
 $search_filter = $args[0]
 $current_dir = Get-Location
 
-Get-ChildItem -Path $current_dir -Filter $search_filter -Recurse -ErrorAction SilentlyContinue -Force
+ls $current_dir "*$($search_filter)*" -Recurse -Directory -Force -ErrorAction SilentlyContinue
